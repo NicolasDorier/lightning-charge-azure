@@ -4,15 +4,14 @@
 export AZURE_DNS="$1"
 export NBITCOIN_NETWORK="$2"
 export LETSENCRYPT_EMAIL="$3"
-export SUPPORTED_CRYPTO_CURRENCIES="$4"
-export LIGHTNING_DOCKER_REPO="$5"
-export LIGHTNING_DOCKER_REPO_BRANCH="$6"
+export LIGHTNING_DOCKER_REPO="$4"
+export LIGHTNING_DOCKER_REPO_BRANCH="$5"
 
 export DOWNLOAD_ROOT="`pwd`"
 export LIGHTNING_ENV_FILE="`pwd`/.env"
 
 export LIGHTNING_HOST="$AZURE_DNS"
-export LIGHTNING_DOCKER_COMPOSE="`pwd`/lightning-charge-azure/Production/docker-compose.$SUPPORTED_CRYPTO_CURRENCIES.yml"
+export LIGHTNING_DOCKER_COMPOSE="`pwd`/lightning-charge-docker/docker-compose.yml"
 export ACME_CA_URI="https://acme-staging.api.letsencrypt.org/directory"
 
 echo "DNS NAME: $AZURE_DNS"

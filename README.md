@@ -109,9 +109,8 @@ Here are the step on provisioning done by Azure (so you can do it yourelf):
     1. The initial DNS name
     2. The network (mainnet, testnet, regtest)
     3. Let's encrypt email
-    4. Supported crypto currencies separated by '-'
-    5. Docker repository url used for fetching the docker-compose
-    6. The branch of this repository
+    4. Docker repository url used for fetching the docker-compose
+    5. The branch of this repository
 * `entrypoint.sh` does the following actions:
     1. Copy the parameters inside `/etc/environment` and `/etc/profile.d/lightning-env.sh` so they can be accessed via environment variable globally
     2. Add also those parameters  in the `.env` file which will be used by the `docker-compose`
