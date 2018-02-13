@@ -1,0 +1,1 @@
+docker exec -ti lightningchargedocker_lightning-charged_1 lightning-cli --lightning-dir=/data/lightning $@

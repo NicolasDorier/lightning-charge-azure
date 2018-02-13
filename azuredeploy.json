@@ -219,7 +219,8 @@
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/changedomain.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-restart.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-update.sh",
-                            "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-show.sh"],
+                            "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-show.sh",
+                            "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-cli.sh"],
               "commandToExecute" : "[concat('./entrypoint.sh ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn, ' ', parameters('network'), ' ', parameters('notificationEmail'),' ', parameters('repository'), ' ', parameters('branch'))]"
           }
         }
