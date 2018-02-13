@@ -99,6 +99,28 @@ sudo su -
 reboot
 ```
 
+# How to use lightning
+
+`lightning-cli.sh` is a bash file which will run `lightning-cli` from inside the lightning charged container.
+
+Please check the [c-lightning project](https://github.com/ElementsProject/lightning) or type the following command to get help.
+
+```
+sudo su -
+lightning-cli.sh help
+```
+
+# How to connect to charged
+
+`lightning-show.sh` is a bash file which will return you the credential and URL to use to connect to your lightning charge instance.
+
+Please, check the [lightning charged project](https://github.com/ElementsProject/lightning-charge) for documentation on this API.
+
+```
+sudo su -
+lightning-show.sh
+```
+
 # Under the hood
 
 Here are the step on provisioning done by Azure (so you can do it yourelf):
