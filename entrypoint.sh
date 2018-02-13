@@ -61,9 +61,6 @@ cd lightning-charge-docker
 git checkout $LIGHTNING_DOCKER_REPO_BRANCH
 cd ..
 
-cd "`dirname $LIGHTNING_ENV_FILE`"
-docker-compose -f "$LIGHTNING_DOCKER_COMPOSE" up -d 
-
 # Schedule for reboot
 
 echo "
@@ -94,6 +91,9 @@ echo "ACME_CA_URI=$ACME_CA_URI" >> $LIGHTNING_ENV_FILE
 echo "NBITCOIN_NETWORK=$NBITCOIN_NETWORK" >> $LIGHTNING_ENV_FILE
 echo "LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL" >> $LIGHTNING_ENV_FILE
 echo "CHARGED_API_TOKEN=$CHARGED_API_TOKEN" >> $LIGHTNING_ENV_FILE
+
+cd "`dirname $LIGHTNING_ENV_FILE`"
+docker-compose -f "$LIGHTNING_DOCKER_COMPOSE" up -d 
 
 chmod +x changedomain.sh
 chmod +x lightning-restart.sh
