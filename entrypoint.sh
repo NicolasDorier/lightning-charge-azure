@@ -55,9 +55,9 @@ apt-get install -y docker-ce
 curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# Clone lightning-charge-azure
+# Clone lightning-charge-docker
 git clone $LIGHTNING_DOCKER_REPO
-cd lightning-charge-azure
+cd lightning-charge-docker
 git checkout $LIGHTNING_DOCKER_REPO_BRANCH
 cd ..
 
@@ -86,7 +86,7 @@ end script" > /etc/init/start_containers.conf
 
 initctl reload-configuration
 
-export CHARGED_API_TOKEN=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c${1:-32};echo;)
+export CHARGED_API_TOKEN=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1`
 # Set .env file
 touch $LIGHTNING_ENV_FILE
 echo "CHARGED_HOST=$CHARGED_HOST" >> $LIGHTNING_ENV_FILE
