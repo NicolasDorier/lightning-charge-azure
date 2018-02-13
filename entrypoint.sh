@@ -10,7 +10,7 @@ export LIGHTNING_DOCKER_REPO_BRANCH="$5"
 export DOWNLOAD_ROOT="`pwd`"
 export LIGHTNING_ENV_FILE="`pwd`/.env"
 
-export LIGHTNING_HOST="$AZURE_DNS"
+export CHARGED_HOST="$AZURE_DNS"
 export LIGHTNING_DOCKER_COMPOSE="`pwd`/lightning-charge-docker/docker-compose.yml"
 export ACME_CA_URI="https://acme-staging.api.letsencrypt.org/directory"
 
@@ -86,12 +86,14 @@ end script" > /etc/init/start_containers.conf
 
 initctl reload-configuration
 
+export CHARGED_API_TOKEN=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c${1:-32};echo;)
 # Set .env file
 touch $LIGHTNING_ENV_FILE
-echo "LIGHTNING_HOST=$LIGHTNING_HOST" >> $LIGHTNING_ENV_FILE
+echo "CHARGED_HOST=$CHARGED_HOST" >> $LIGHTNING_ENV_FILE
 echo "ACME_CA_URI=$ACME_CA_URI" >> $LIGHTNING_ENV_FILE
 echo "NBITCOIN_NETWORK=$NBITCOIN_NETWORK" >> $LIGHTNING_ENV_FILE
 echo "LETSENCRYPT_EMAIL=$LETSENCRYPT_EMAIL" >> $LIGHTNING_ENV_FILE
+echo "CHARGED_API_TOKEN=$CHARGED_API_TOKEN" >> $LIGHTNING_ENV_FILE
 
 chmod +x changedomain.sh
 chmod +x lightning-restart.sh

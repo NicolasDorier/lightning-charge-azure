@@ -142,10 +142,11 @@ export LIGHTNING_ENV_FILE="/var/lib/waagent/custom-script/download/0/.env"
 Example of `.env` file:
 
 ```
-LIGHTNING_HOST=test-btc-ltc.forkbitpay.ninja
+CHARGED_HOST=test-btc-ltc.forkbitpay.ninja
 ACME_CA_URI=https://acme-v01.api.letsencrypt.org/directory
 NBITCOIN_NETWORK=testnet
 LETSENCRYPT_EMAIL=me@example.com
+CHARGED_API_TOKEN=Ajz5AbE5nOy18I2o5dTZr4NyUCxqVpOY
 ```
 
 Example of `/etc/init/start_containers.conf` file:
