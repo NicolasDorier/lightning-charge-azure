@@ -254,6 +254,20 @@
                 "priority": 102,
                 "direction": "Inbound"
               }
+            },
+            {
+              "name": "Lets-Encrypt",
+              "properties": {
+                "description": "Allow inbound HTTP for let's encrypt access",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "80",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 102,
+                "direction": "Inbound"
+              }
             }
           ]
         }
