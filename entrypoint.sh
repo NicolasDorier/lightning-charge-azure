@@ -100,8 +100,10 @@ chmod +x lightning-restart.sh
 chmod +x lightning-update.sh
 chmod +x lightning-show.sh
 chmod +x lightning-cli.sh
+chmod +x bitcoin-cli.sh
 ln -s `pwd`/changedomain.sh /usr/bin/changedomain.sh
 ln -s `pwd`/lightning-restart.sh /usr/bin/lightning-restart.sh
 ln -s `pwd`/lightning-update.sh /usr/bin/lightning-update.sh
 ln -s `pwd`/lightning-update.sh /usr/bin/lightning-show.sh
 ln -s `pwd`/lightning-update.sh /usr/bin/lightning-cli.sh
+ln -s `pwd`/lightning-update.sh /usr/bin/bitcoin-cli.sh

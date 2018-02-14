@@ -110,6 +110,17 @@ sudo su -
 lightning-cli.sh help
 ```
 
+# How to use Bitcoin
+
+`bitcoin-cli.sh` is a bash file which will run `bitcoin-cli` from inside the bitcoind container.
+
+You can type the following command to get help.
+
+```
+sudo su -
+bitcoin-cli.sh help
+```
+
 # How to connect to charged
 
 `lightning-show.sh` is a bash file which will return you the credential and URL to use to connect to your lightning charge instance.
