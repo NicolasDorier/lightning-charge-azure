@@ -153,7 +153,10 @@
                 }
               }
             }
-          ]
+          ],
+          "networkSecurityGroup": {
+            "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'NetworkSecurityGroup')]"
+            }
         }
       },
       {
@@ -198,6 +201,61 @@
               }
             ]
           }
+        }
+      },
+      {
+        "apiVersion": "2017-03-01",
+        "type": "Microsoft.Network/networkSecurityGroups",
+        "name": "NetworkSecurityGroup",
+        "location": "[resourceGroup().location]",
+        "tags": {
+          "displayName": "NSG - Front End"
+        },
+        "properties": {
+          "securityRules": [
+            {
+              "name": "Lightning-Charge",
+              "properties": {
+                "description": "Allow inbound Lightning Charge access",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "443",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 100,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "SSH",
+              "properties": {
+                "description": "Allow inbound SSH access",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "22",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 101,
+                "direction": "Inbound"
+              }
+            },
+            {
+              "name": "Lightning",
+              "properties": {
+                "description": "Allow inbound Lighning Network access",
+                "protocol": "Tcp",
+                "sourcePortRange": "*",
+                "destinationPortRange": "9735",
+                "sourceAddressPrefix": "Internet",
+                "destinationAddressPrefix": "*",
+                "access": "Allow",
+                "priority": 102,
+                "direction": "Inbound"
+              }
+            }
+          ]
         }
       },
       {
