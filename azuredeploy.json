@@ -15,6 +15,12 @@
           "description": "The name of the SSH password."
         }
       },
+      "lightningNodeAlias": {
+        "type": "string",
+        "metadata": {
+          "description": "How your node's name will appear on the lightning network (without space)"
+        }
+      },
       "notificationEmail": {
         "type": "string",
         "defaultValue": "yourname@example.com",
@@ -294,7 +300,7 @@
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-show.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-cli.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/bitcoin-cli.sh"],
-              "commandToExecute" : "[concat('./entrypoint.sh ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn, ' ', parameters('network'), ' ', parameters('notificationEmail'),' ', parameters('repository'), ' ', parameters('branch'))]"
+              "commandToExecute" : "[concat('./entrypoint.sh ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn, ' ', parameters('network'), ' ', parameters('notificationEmail'),' ', parameters('repository'), ' ', parameters('branch'), ' ', parameters('lightningNodeAlias')]"
           }
         }
       }
