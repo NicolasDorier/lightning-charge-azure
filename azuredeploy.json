@@ -301,7 +301,7 @@
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-show.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/lightning-cli.sh",
                             "https://raw.githubusercontent.com/nicolasdorier/lightning-charge-azure/master/bitcoin-cli.sh"],
-              "commandToExecute" : "[concat('./entrypoint.sh ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn, ' ', parameters('network'), ' ', parameters('notificationEmail'),' ', parameters('repository'), ' ', parameters('branch'), ' ', parameters('lightningNodeAlias'), ' ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').ipAddress)]"
+              "commandToExecute" : "[concat('./entrypoint.sh ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2016-03-30').dnsSettings.fqdn, ' ', parameters('network'), ' ', parameters('notificationEmail'),' ', parameters('repository'), ' ', parameters('branch'), ' ', parameters('lightningNodeAlias'), ' ', reference(concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName')), '2017-10-01').properties.ipAddress)]"
           }
         }
       }
