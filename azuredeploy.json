@@ -17,6 +17,7 @@
       },
       "lightningNodeAlias": {
         "type": "string",
+        "defaultValue": "",
         "metadata": {
           "description": "How your node's name will appear on the lightning network (without space)"
         }
