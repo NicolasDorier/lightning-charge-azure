@@ -7,8 +7,9 @@ export LETSENCRYPT_EMAIL="$3"
 export LIGHTNING_DOCKER_REPO="$4"
 export LIGHTNING_DOCKER_REPO_BRANCH="$5"
 export CHARGED_ALIAS="$6"
-export CHARGED_IP="$7"
 
+
+export CHARGED_IP="`dig +short $AZURE_DNS | awk '/^[0-9:]/' | head -1`"
 export DOWNLOAD_ROOT="`pwd`"
 export LIGHTNING_ENV_FILE="`pwd`/.env"
 
