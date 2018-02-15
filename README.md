@@ -180,6 +180,7 @@ ACME_CA_URI=https://acme-v01.api.letsencrypt.org/directory
 NBITCOIN_NETWORK=testnet
 LETSENCRYPT_EMAIL=me@example.com
 CHARGED_API_TOKEN=Ajz5AbE5nOy18I2o5dTZr4NyUCxqVpOY
+CHARGED_IP=1.2.3.4
 ```
 
 Example of `/etc/init/start_containers.conf` file:
