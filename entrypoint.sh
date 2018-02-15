@@ -15,6 +15,8 @@ export CHARGED_HOST="$AZURE_DNS"
 export LIGHTNING_DOCKER_COMPOSE="`pwd`/lightning-charge-docker/docker-compose.yml"
 export ACME_CA_URI="https://acme-staging.api.letsencrypt.org/directory"
 
+CHARGED_ALIAS="oneclick${CHARGED_ALIAS:-`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1`}"
+
 echo "DNS NAME: $AZURE_DNS"
 
 # Put the variable in /etc/environment for reboot
