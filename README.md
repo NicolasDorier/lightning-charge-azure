@@ -4,6 +4,11 @@ Instructions to deploy Lightning Server in [production environment](https://gith
 
 The following instructions assume you have [Microsoft Azure](https://azure.microsoft.com/) subscription.
 
+You can see the showcase video:
+
+
+[![Lightning Charge - One Click Setup](http://img.youtube.com/vi/D4RqULSA4uU/mqdefault.jpg)](https://www.youtube.com/watch?v=D4RqULSA4uU "Lightning Charge - One Click Setup")
+
 # Deploy via Microsoft Azure Portal
 
 Click on this button and follow instructions:
