@@ -9,7 +9,9 @@ export ACME_CA_URI="https://acme-v01.api.letsencrypt.org/directory"
 # Modify environment file
 sed -i '/^CHARGED_HOST/d' $LIGHTNING_ENV_FILE
 sed -i '/^ACME_CA_URI/d' $LIGHTNING_ENV_FILE
+sed -i '/^CHARGED_ALIAS/d' $LIGHTNING_ENV_FILE
 echo "CHARGED_HOST=$CHARGED_HOST" >> $LIGHTNING_ENV_FILE
+echo "CHARGED_ALIAS=$CHARGED_HOST" >> $LIGHTNING_ENV_FILE
 echo "ACME_CA_URI=$ACME_CA_URI" >> $LIGHTNING_ENV_FILE
 
 cd "`dirname $LIGHTNING_ENV_FILE`"
