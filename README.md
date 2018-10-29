@@ -1,5 +1,9 @@
 # Lightning Azure
 
+----
+THIS REPOSITORY IS OUTDATED, PLEASE USE BTCPAYSERVER ONE CLICK DEPLOYMENT TO HAVE AN EASY TO USE CLIGHTNING SERVER (https://bitcoinshirt.co/how-to-create-store-accept-bitcoin/)
+----
+
 Instructions to deploy Lightning Server in [production environment](https://github.com/nicolasdorier/lightning-charge-azure/tree/master) hosted in Microsoft Azure. It included: Bitcoin Core, C-Lightning, Charged, and Let's encrypt.
 
 The following instructions assume you have [Microsoft Azure](https://azure.microsoft.com/) subscription.
